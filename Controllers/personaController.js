@@ -1,4 +1,4 @@
-const Persona = require('../models/personaModel');
+const Persona = require('../Models/personaModel');
 
 const personaControllers = {
 

@@ -16,7 +16,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors());
 app.use(morgan('common'));
 
-//Configuramos Multer
+//Configuramos Multer1
 const storage = multer.diskStorage({ 
     destination: function(req, file, callback) {
         console.log(file);
