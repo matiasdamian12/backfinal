@@ -1,6 +1,6 @@
 const Persona = require('../models/personaModel');
 
-class personaControllers {
+class personaController {
 
     async findAll(){
         try {
@@ -35,4 +35,4 @@ class personaControllers {
     }
 }
 
-module.exports = new personaControllers;
+module.exports = new personaController;
