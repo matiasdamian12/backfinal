@@ -7,7 +7,7 @@ const path = require('path');
 const multer = require('multer');
 
 const app = express();
-const personaController = require('./controllers/personaController')
+const personaController = require('./Controllers/personaController')
 
 //Middelwares
 app.use(express.json());
