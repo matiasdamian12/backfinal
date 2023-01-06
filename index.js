@@ -16,19 +16,19 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors());
 app.use(morgan('common'));
 
-// //Configuramos Multer
-// const storage = multer.diskStorage({ 
-//     destination: function(req, file, callback) {
-//         console.log(file);
-//         callback(null, 'uploads')
-//     }, 
-//     filename: function(req, file, callback){
-//         callback(null, `${file.originalname}`)
-//     }
-// });
+//Configuramos Multer
+const storage = multer.diskStorage({ 
+    destination: function(req, file, callback) {
+        console.log(file);
+        callback(null, 'uploads')
+    }, 
+    filename: function(req, file, callback){
+        callback(null, `${file.originalname}`)
+    }
+});
 
-// //Pasamos la configuración a Multer
-// const uploads = multer({ storage: storage })
+//Pasamos la configuración a Multer
+const uploads = multer({ storage: storage })
 
 app.get('/datos', async (req, res) => {
     res.json({
@@ -53,16 +53,16 @@ app.put('/:id', (req, res) => {
     res.send('Persona Actualizada')
 })
 
-// app.post('/subir', uploads.single('miArchivo') , (req, res, next) => {
-//     const file = req.file;
+app.post('/subir', uploads.single('miArchivo') , (req, res, next) => {
+    const file = req.file;
 
-//     if(!file){
-//         const error = new Error('Error subiendo el archivo')
-//         error.httpStatusCode=404
-//         return next(error)
-//     }
-//     res.send(`Archivo <b>${file.originalname}</b> subido correctamente`)
-// })
+    if(!file){
+        const error = new Error('Error subiendo el archivo')
+        error.httpStatusCode=404
+        return next(error)
+    }
+    res.send(`Archivo <b>${file.originalname}</b> subido correctamente`)
+})
 
 app.listen(PORT, ()=>{
     console.log(`MERN trabajando en el Puerto ${PORT}`);
