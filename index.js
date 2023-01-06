@@ -5,7 +5,7 @@ const morgan = require('morgan');
 const PORT = process.env.PORT || 9000;
 const path = require('path');
 const multer = require('multer');
-require('./database/conexion');
+//require('./database/conexion');
 const app = express();
 const personaController = require('./controllers/personaController')
 
