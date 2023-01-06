@@ -5,7 +5,7 @@ const morgan = require('morgan');
 const PORT = process.env.PORT || 9000;
 const path = require('path');
 const multer = require('multer');
-
+require('./Database/Conexion')
 const app = express();
 const personaController = require('./Controllers/personaController')
 
@@ -16,7 +16,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors());
 app.use(morgan('common'));
 
-//Configuramos Multer1
+//Configuramos Multer
 const storage = multer.diskStorage({ 
     destination: function(req, file, callback) {
         console.log(file);
