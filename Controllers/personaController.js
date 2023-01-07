@@ -18,21 +18,21 @@ const personaControllers = {
         }
     },
 
-    async delete(id){
-        try {
-            return await Persona.findByIdAndDelete(id);
-        } catch (error) {
-            throw error
-        }
-    },
+//     async delete(id){
+//         try {
+//             return await Persona.findByIdAndDelete(id);
+//         } catch (error) {
+//             throw error
+//         }
+//     },
 
-    async update(id){
-        try {
-            return await Persona.findByIdAndUpdate(id);
-        } catch (error) {
-            throw error
-        }
-    }
-}
+//     async update(id){
+//         try {
+//             return await Persona.findByIdAndUpdate(id);
+//         } catch (error) {
+//             throw error
+//         }
+//     }
+// }
 
 module.exports = personaControllers;
