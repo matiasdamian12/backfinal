@@ -33,6 +33,6 @@ const personaControllers = {
 //             throw error
 //         }
 //     }
-// }
+ }
 
 module.exports = personaControllers;
